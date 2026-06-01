@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Alunos</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f5f5f5; }
+        .container { max-width: 700px; margin: auto; background: white; padding: 25px; border-radius: 8px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
+        a { display: inline-block; margin-top: 20px; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Lista de Alunos</h1>
+
+    <table>
+        <tr>
+            <th>Nome</th>
+            <th>Matrícula</th>
+        </tr>
+        <tr th:each="aluno : ${alunos}">
+            <td th:text="${aluno.nome}"></td>
+            <td th:text="${aluno.matricula}"></td>
+        </tr>
+    </table>
+
+    <a href="/alunos">Cadastrar outro aluno</a>
+</div>
+</body>
+</html>
